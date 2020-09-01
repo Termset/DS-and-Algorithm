@@ -54,14 +54,43 @@ void quickSort(int left, int right, vector<int>& arr)
     quickSort(left, i - 1, arr);//µÝ¹é×ó±ß
     quickSort(i + 1, right, arr);//µÝ¹éÓÒ±ß
 }
+/*
+ * Dictation
+ */
+void quickSort2(int left, int right, vector<int> &arr){
+    if (left>=right) return;
+    int i,j;
+    i=left;
+    j=right;
+    int base,tmp;
+    base=arr[left];
+    while (i<j){
+        while (arr[j]>=base && i<j)
+            j--;
+        while (arr[i]<=base && i<j)
+            i++;
+        if (i<j) {
+            tmp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = tmp;
+        }
+    }
+    //
 
+    arr[left]=arr[i];
+    arr[i]=base;
+
+    quickSort2(left, i-1, arr);
+    quickSort2(j+1,right,arr);
+}
 int main() {
 //    int d[] = { 6,4,1,8,7,5 };
     vector<int> d = { 6,4,1,8,7,5 };
     cout<<"ÊäÈëÊý×é { 6,4,1,8,7,5 } "<<endl;
-    quickSort(0, 5, d);
+    quickSort2(0, 5, d);
     for (int i=0; i<d.size();i++){
         cout<<d[i]<<" ";
     }
 
 }
+
