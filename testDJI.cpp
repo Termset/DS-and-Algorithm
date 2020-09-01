@@ -1,7 +1,7 @@
 //
 // Created by xutianqi on 2020/8/16.
 //
-// ï¿½ï¿½1
+// Ìâ1
 //#include<stdio.h>
 //
 //int n,s;
@@ -60,7 +60,7 @@
 
 
 
-//ï¿½ï¿½3
+//Ìâ3
 using namespace std;
 
 char ch[10005];
@@ -140,7 +140,7 @@ int main()
 
 
 /*
-// ï¿½ï¿½2
+// Ìâ2
 using namespace std;
 
 int f[1005];
