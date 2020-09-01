@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void adjust_heap(int *a,int node,int size){
+void adjust_heap(int a[],int node,int size){
     int left = 2*node + 1;
     int right = 2*node + 2;
     int max = node;
@@ -14,13 +14,19 @@ void adjust_heap(int *a,int node,int size){
         max = left;
     if (right < size && a[right] > a[max])
         max = right;
+
+    /*
+     * 如果满足父节点大于子节点，则不需要调整；
+     * 如果需要调整，交换节点，并且对子树进行调整。
+     */
+
     if (max != node){
         swap(a[max],a[node]);
         adjust_heap(a,max,size);
     }
 }
 
-void heap_sort(int* a, int len)
+void heap_sort(int a[], int len)
 {
     // 先建堆
     for (int i=len/2 - 1;i>=0;--i)
