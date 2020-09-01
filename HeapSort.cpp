@@ -22,8 +22,11 @@ void adjust_heap(int *a,int node,int size){
 
 void heap_sort(int* a, int len)
 {
+    // 先建堆
     for (int i=len/2 - 1;i>=0;--i)
         adjust_heap(a,i,len);
+
+    // 将堆顶交换到堆尾，然后重新调整堆结构
     for (int i = len-1;i>=0;i--)
     {
         swap(a[0], a[i]);
