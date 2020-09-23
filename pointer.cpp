@@ -3,6 +3,11 @@
 //
 
 #include <stdio.h>
+#include <unordered_map>
+#include <map>
+#include <vector>
+
+using  namespace std;
 
 int main()
 {
