@@ -7,6 +7,7 @@
 using namespace std;
 
 void adjust_heap(int a[],int node,int size){
+    // 当前节点node和左右子节点比较
     int left = 2*node + 1;
     int right = 2*node + 2;
     int max = node;
@@ -28,14 +29,16 @@ void adjust_heap(int a[],int node,int size){
 
 void heap_sort(int a[], int len)
 {
-    // 先建堆
+    // 先建堆 由底向上，倒数第二层开始
     for (int i=len/2 - 1;i>=0;--i)
         adjust_heap(a,i,len);
 
     // 将堆顶交换到堆尾，然后重新调整堆结构
+    // 交换一次，数组末尾排序完成，剩下len=i继续调整
     for (int i = len-1;i>=0;i--)
     {
-        swap(a[0], a[i]);
+        swap(a[0], a[i]); //交换
+        //由顶向下
         adjust_heap(a,0,i);
     }
 }
