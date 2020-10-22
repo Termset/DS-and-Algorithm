@@ -51,6 +51,6 @@ void DFS(int index){
 }
 int main(){
     cin>>n;
-    DFS(3);
+    DFS(1);
     return 0;
 }
