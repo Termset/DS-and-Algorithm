@@ -32,9 +32,7 @@ void merge(int sr[], int s, int m, int t){
     int length = t - s + 1;
 //    int *tr = new int[length];
     int tr[length];
-
     int i = s, j = m + 1, k = 0;
-
     while(i <= m && j <= t){
         if (sr[i] < sr[j])
             tr[k++] = sr[i++];
