@@ -3,4 +3,4 @@ project(C_wh)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(C_wh leetcode/reversePairs.cpp)
+add_executable(C_wh test1229.cpp)
