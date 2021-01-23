@@ -12,12 +12,12 @@ using namespace std;
 class UnionFind {
 public:
     vector<int> parent;
-    vector<int> size;
+    vector<int> rank; // 秩
     int n;
     int setCount;
 
 public:
-    UnionFind(int _n):n(_n), setCount(_n), parent(_n), size(_n,1) { //初始化变量
+    UnionFind(int _n):n(_n), setCount(_n), parent(_n), rank(_n,1) { //初始化变量
         iota(parent.begin(), parent.end(), 0); // 对数组赋值
     }
 
@@ -29,9 +29,10 @@ public:
         x=findset(x);
         y=findset(y);
         if (x==y) return false;
-        if (size[x]<size[y]) swap(x,y);
+        // 按秩合并
+        if (rank[x]<rank[y]) swap(x,y);
         parent[y]=x;
-        size[x]+=size[y];
+        rank[x]+=rank[y];
         --setCount;
         return true;
     }
