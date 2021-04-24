@@ -15,12 +15,10 @@ void adjust_heap(int a[],int node,int size){
         max = left;
     if (right < size && a[right] > a[max])
         max = right;
-
     /*
      * 如果满足父节点大于子节点，则不需要调整；
      * 如果需要调整，交换节点，并且对子树进行调整。
      */
-
     if (max != node){
         swap(a[max],a[node]);
         adjust_heap(a,max,size);
