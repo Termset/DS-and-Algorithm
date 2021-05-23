@@ -76,7 +76,6 @@ void quickSort2(int left, int right, vector<int> &arr){
         }
     }
     //
-
     arr[left]=arr[i];
     arr[i]=base;
 
@@ -91,6 +90,5 @@ int main() {
     for (int i=0; i<d.size();i++){
         cout<<d[i]<<" ";
     }
-
 }
 
